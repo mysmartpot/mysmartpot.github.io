@@ -24,10 +24,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:link:hover {
   text-decoration: underline;
 }
 
+/* Class for elements that are invisible but read by screen readers. */
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -70,28 +71,30 @@ header:after,
   border-top: var(--slant-size) solid var(--slant-color);
 }
 
-@media screen and (max-width: 480px) {
-  header:after {
-    content: none;
-  }
-}
-
 /******************************************************************************
  * Header                                                                     *
  ******************************************************************************/
 
 header {
-  display: flex;
-  justify-content: center;
-
   background-color: var(--dark-accent-color);
   --slant-color: var(--dark-accent-color);
   height: var(--header-height);
 }
 
-header nav {
-  z-index: 1;
+/* On small screens the header and video do not overlap and the header
+   is not slanted. */
+@media screen and (max-width: 480px) {
+  header {
+    z-index: 1;
+    height: auto;
+  }
 
+  header:after {
+    content: none;
+  }
+}
+
+header nav {
   flex: 1;
   display: flex;
   align-items: flex-start;
@@ -162,6 +165,10 @@ header nav .icon {
  * Project Video                                                              *
  ******************************************************************************/
 
+.video-page {
+   min-height: 100vh;
+}
+
 .video-container {
   position: relative;
   display: flex;
@@ -179,11 +186,16 @@ header nav .icon {
   background-color: var(--light-background-color);
 }
 
+/* On small screens the video fits the screen width. */
 @media screen and (max-width: 480px) {
+  .video-container {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
   .video-container iframe {
     margin: 0;
     border-radius: 0;
-    box-shadow: 0px -30px 30px 30px var(--dark-accent-color);
   }
 }
 
@@ -243,28 +255,6 @@ header nav .icon {
   to {
     transform: translateY(-10px) var(--transform);
     filter: drop-shadow(7px 7px 5px var(--dark-accent-color));
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .arrow-container {
-    margin-top: 15px;
-  }
-}
-
-@media screen and (max-width: 768px),
-       screen and (max-height: 668px) {
-  .arrow-container {
-    display: none;
-  }
-  .video-page {
-    margin-bottom: 100px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .video-page {
-    min-height: 100vh;
   }
 }
 
