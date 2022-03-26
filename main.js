@@ -1,4 +1,10 @@
 (function() {
+  // Modify anchors such that they can be clicked.
+  const anchors = document.querySelectorAll('a[name]');
+  for (const anchor of anchors) {
+    anchor.href = `#${anchor.name}`;
+  }
+
   // Modify links to anchors such that elements are smoothly scrolled into view.
   const internalLinks = document.querySelectorAll('a[href^="#"]');
   for (const link of internalLinks) {
