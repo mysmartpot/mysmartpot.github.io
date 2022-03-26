@@ -7,7 +7,7 @@
   --page-background-color: #FFFFFF;
   --headline-color: #8b8b8b;
   --header-height: 300px;
-  --max-nav-width: 1200px;
+  --max-page-width: 1200px;
   --max-video-width: 900px;
   --slant-size: 8vh;
 }
@@ -76,6 +76,10 @@ header:after,
  ******************************************************************************/
 
 header {
+  /* Center the navigation bar. */
+  display: flex;
+  justify-content: center;
+
   background-color: var(--dark-accent-color);
   --slant-color: var(--dark-accent-color);
   height: var(--header-height);
@@ -97,19 +101,11 @@ header {
 header nav {
   flex: 1;
   display: flex;
-  align-items: flex-start;
-
-  max-width: var(--max-nav-width);
+  max-width: var(--max-page-width);
   overflow: hidden;
 
   padding-left: 50px;
   padding-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  header nav {
-    justify-content: center;
-  }
 }
 
 header nav .brand {
@@ -124,12 +120,14 @@ header nav .brand {
   white-space: nowrap;
 }
 
+/* On devices with a pointer, the logo is animated slightly when hovered. */
 @media (hover: hover) {
   header nav .brand:hover {
-    transform: perspective(100px) rotateY(5deg) translateZ(-30px);
+    transform: perspective(100px) rotateY(9deg) translateZ(-30px);
   }
 }
 
+/* On small screens the logo size is reduced. */
 @media screen and (max-width: 480px) {
   header nav .brand {
     font-size: 60pt;
@@ -143,7 +141,13 @@ header nav .links {
   margin-right: 20px;
 }
 
+/* On medium sized screens the navigation links are invisible and the logo
+   centered instead.*/
 @media screen and (max-width: 768px) {
+  header nav {
+    justify-content: center;
+  }
+
   header nav .links {
     display: none;
   }
@@ -284,7 +288,7 @@ header nav .icon {
 }
 
 .content {
-  max-width: var(--max-nav-width);
+  max-width: var(--max-page-width);
   padding: 0 25px;
 }
 
@@ -295,24 +299,22 @@ header nav .icon {
   transform: translateY(-35px) rotate(-4deg);
 }
 
+/* The size of the content headings depends on the screen size. */
 @media screen and (min-width: 480px) {
   .content h2 {
     font-size: 30pt;
-    white-space: nowrap;
   }
 }
 
 @media screen and (min-width: 768px) {
   .content h2 {
     font-size: 35pt;
-    white-space: nowrap;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .content h2 {
     font-size: 40pt;
-    white-space: nowrap;
   }
 }
 
