@@ -8,7 +8,8 @@
         ? [document.body]
         : document.getElementsByName(targetName);
       if (targets.length > 0) {
-        targets[0].scrollIntoView({ behavior: 'smooth' });
+        const target = targets[0];
+        target.scrollIntoView({ behavior: 'smooth' });
         window.history.pushState({}, '', link.href);
         event.preventDefault();
       }
@@ -27,7 +28,10 @@
   // containers.
   function revealIntersected(entries) {
     for (const entry of entries) {
-      entry.target.style.setProperty('--intersection-ratio', entry.intersectionRatio)
+      entry.target.style.setProperty(
+        '--intersection-ratio',
+        entry.intersectionRatio
+      );
     }
   }
 
