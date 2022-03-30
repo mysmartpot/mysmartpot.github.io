@@ -26,4 +26,24 @@
   for (const link of externalLinks) {
     link.target = '_blank';
   }
+
+  // Callback that sets the `--intersection-ratio` property of observed
+  // elements to the percentage of the element that is currently in the
+  // viewport. The custom property is used in CSS to animate content
+  // containers.
+  function revealIntersected(entries) {
+    for (const entry of entries) {
+      entry.target.style.setProperty('--intersection-ratio', entry.intersectionRatio)
+    }
+  }
+
+  // Create an intersection observer for elements that should be revealed when
+  // they are scrolled into view.
+  const observer = new IntersectionObserver(revealIntersected, {
+    threshold: Array.from({length: 100}, (value, key) => 1 - key / 100)
+  });
+  const revealables = document.querySelectorAll('.revealable');
+  for (const revealable of revealables) {
+    observer.observe(revealable);
+  }
 })();

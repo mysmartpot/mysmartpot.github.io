@@ -3,9 +3,9 @@
 :root {
   --dark-accent-color: #222224;
   --light-text-color: #E8E8E9;
-  --light-background-color: #e8e8e9;
+  --light-background-color: #E8E8E9;
   --page-background-color: #FFFFFF;
-  --headline-color: #8b8b8b;
+  --headline-color: #8B8B8B;
   --header-height: 300px;
   --max-page-width: 1200px;
   --max-video-width: 900px;
@@ -45,27 +45,26 @@ a:link:hover {
 
 header,
 footer,
-.content-container:nth-child(odd) {
+.content-container {
   position: relative;
 }
 
 footer:before,
-.content-container:nth-child(odd):before {
+.content-container:before {
   content: "";
   display: block;
   position: absolute;
-  top: calc(-1 * var(--slant-size));
+  top: calc(1px - var(--slant-size));
   right: 0;
   border-left: 100vw solid transparent;
   border-bottom: var(--slant-size) solid var(--slant-color);
 }
 
-header:after,
-.content-container:nth-child(odd):after {
+header:after {
   content: "";
   display: block;
   position: absolute;
-  bottom: calc(-1 * var(--slant-size));
+  bottom: calc(1px - var(--slant-size));
   right: 0;
   border-right: 100vw solid transparent;
   border-top: var(--slant-size) solid var(--slant-color);
@@ -269,9 +268,11 @@ header nav .icon {
 .content-container {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
   padding-top: 50px;
-  padding-bottom: var(--slant-size);
+  padding-bottom: calc(3 * var(--slant-size));
+  margin-bottom: calc(-2 * var(--slant-size));
+
+  filter: drop-shadow(0 8px 8px var(--dark-accent-color));
 }
 
 .content-container:nth-child(odd) {
@@ -280,11 +281,8 @@ header nav .icon {
 }
 
 .content-container:nth-child(even) {
-  padding-top: calc(25px + var(--slant-size));
-}
-
-.content-container:last-child {
-  padding-bottom: calc(2 * var(--slant-size));
+  background-color: var(--page-background-color);
+  --slant-color: var(--page-background-color);
 }
 
 .content {
@@ -349,6 +347,7 @@ header nav .icon {
 
 footer {
   padding: 10px;
+  margin-top: calc(-2 * var(--slant-size));
 
   color: var(--light-text-color);
   background-color: var(--dark-accent-color);
@@ -386,4 +385,31 @@ footer nav a .label {
 
 footer .copyright {
   margin: 20px 0;
+}
+
+/******************************************************************************
+ * Scroll Effect                                                              *
+ ******************************************************************************/
+
+.revealable,
+.revealable .content {
+  animation: reveal 1s linear forwards;
+  animation-delay: calc(-1s * var(--intersection-ratio));
+  animation-play-state: paused;
+}
+
+.revealable .content {
+  animation-name: reveal-content;
+}
+
+@keyframes reveal {
+  from {
+    transform: translateY(var(--slant-size));
+  }
+}
+
+@keyframes reveal-content {
+  from {
+    opacity: 0;
+  }
 }
