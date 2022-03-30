@@ -402,6 +402,14 @@ footer .copyright {
   animation-name: reveal-content;
 }
 
+/* Counteract the translation of anchors in the revealable element. */
+.revealable a:not(:link) {
+  display: block;
+  position: relative;
+  transform: translateY(calc(var(--slant-size) * (var(--intersection-ratio) - 2)));
+  visibility: hidden;
+}
+
 @keyframes reveal {
   from {
     transform: translateY(var(--slant-size));
