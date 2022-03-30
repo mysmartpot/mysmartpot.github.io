@@ -84,16 +84,10 @@ header {
   height: var(--header-height);
 }
 
-/* On small screens the header and video do not overlap and the header
-   is not slanted. */
+/* On small screens the header and video do not overlap. */
 @media screen and (max-width: 480px) {
   header {
-    z-index: 1;
     height: auto;
-  }
-
-  header:after {
-    content: none;
   }
 }
 
@@ -169,7 +163,10 @@ header nav .icon {
  ******************************************************************************/
 
 .video-page {
-   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .video-container {
@@ -209,7 +206,8 @@ header nav .icon {
 .arrow-container {
   display: flex;
   justify-content: center;
-  margin-top: 75px;
+  margin-top: var(--slant-size);
+  padding-bottom: calc(2 * var(--slant-size));
 }
 
 .arrow-down {
