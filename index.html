@@ -51,7 +51,11 @@
         <div class="content">
           <h2><a href="#concept">What is a Smart Pot?</a></h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id scelerisque augue, non efficitur odio. In semper, dolor tempus euismod bibendum, eros nibh porta augue, eget malesuada risus dolor et mauris. Ut non pellentesque mi. Donec arcu augue, rutrum sed lectus nec, ornare pharetra dui. Quisque hendrerit diam ut leo dignissim sollicitudin. Morbi diam erat, dignissim non ante et, hendrerit rutrum eros. Sed tincidunt, urna eu congue consequat, dolor nunc venenatis ipsum, in malesuada erat ligula sit amet augue.
+            The Smart Pot is a concept for an internet enabled plant pot that was developed as part of the <a href="https://www.ds.informatik.uni-kiel.de/en/teaching/internet-of-things-wireless-networks">Internet of Things and Wireless Networks course</a> at <a href="https://www.uni-kiel.de/en/">Kiel University</a> in summer term 2021.
+            The Smart Pot aims at preventing the death of indoor plants by reminding their owners of watering them regularly and enabling them to water the plants even if they are not at home.
+            Users can monitor the plant's health via an Android app that displays the data collected by various sensors integrated into the pot.
+            If the soil runs dry, the plant can be watered remotely with just a click of a button.
+            Depending on the plant's needs, the built-in water tank can hold enought water for multiple weeks of unattended operation.
           </p>
         </div>
       </div>
@@ -60,8 +64,18 @@
         <a name="insides"></a>
         <div class="content">
           <h2><a href="#insides">How does it work?</a></h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id scelerisque augue, non efficitur odio. In semper, dolor tempus euismod bibendum, eros nibh porta augue, eget malesuada risus dolor et mauris. Ut non pellentesque mi. Donec arcu augue, rutrum sed lectus nec, ornare pharetra dui. Quisque hendrerit diam ut leo dignissim sollicitudin. Morbi diam erat, dignissim non ante et, hendrerit rutrum eros. Sed tincidunt, urna eu congue consequat, dolor nunc venenatis ipsum, in malesuada erat ligula sit amet augue.
+            <p>
+              The Smart Pot is powered by an <i>Arduino Nano 33 BLE</i>.
+              The microcontroller is equipped with capacitive sensors to measure the soil moisture and the level of the water tank.
+              Water can be pumped from the water tank into the planting area via a peristaltic pump that is controlled by the microcontroller via a relay.
+            </p>
+            <p>
+              In addition to the Smart Pot, a so called Smart Pot Hub is needed.
+              The Hub runs for example on a <i>Raspberry Pi Zero W</i> and connects to nearby Smart Pots via <i>Bluetooth Low Energy</i> (<abbr title="Bluetooth Low Energy">BLE</abbr>).
+              It collects the sensor readings and provides an API for the Smart Pot App.
+              To access the Hub, the smart phone needs to be on the same WiFi network.
+              However, by using a <abbr title="Virtual Private Network">VPN</abbr>, users can water their plants from anywhere on earth.
+            </p>
           </p>
         </div>
       </div>
@@ -71,7 +85,10 @@
         <div class="content">
           <h2><a href="#yourown">Where can I get one?</a></h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id scelerisque augue, non efficitur odio. In semper, dolor tempus euismod bibendum, eros nibh porta augue, eget malesuada risus dolor et mauris. Ut non pellentesque mi. Donec arcu augue, rutrum sed lectus nec, ornare pharetra dui. Quisque hendrerit diam ut leo dignissim sollicitudin. Morbi diam erat, dignissim non ante et, hendrerit rutrum eros. Sed tincidunt, urna eu congue consequat, dolor nunc venenatis ipsum, in malesuada erat ligula sit amet augue.
+            The Smart Pot is just an early prototype and not an actual product.
+            We do not intend to actively continue development of the Smart Pot.
+            However, if you want to built your own Smart Pot or add more features you are welcome to do so.
+            All code and instructions for building your own Smart Pot can be found online on our <a href="https://github.com/mysmartpot">GitHub page</a> and is licensed under permissive open source licenses.
           </p>
         </div>
       </div>
@@ -80,8 +97,11 @@
         <a name="awards"></a>
         <div class="content">
           <h2><a href="#awards">Awards</a></h2>
+          <h3>IoT & Wireless - Best Project Awards - Summer Term 2021</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id scelerisque augue, non efficitur odio. In semper, dolor tempus euismod bibendum, eros nibh porta augue, eget malesuada risus dolor et mauris. Ut non pellentesque mi. Donec arcu augue, rutrum sed lectus nec, ornare pharetra dui. Quisque hendrerit diam ut leo dignissim sollicitudin. Morbi diam erat, dignissim non ante et, hendrerit rutrum eros. Sed tincidunt, urna eu congue consequat, dolor nunc venenatis ipsum, in malesuada erat ligula sit amet augue.
+            The Smart Pot was developed as part of a project of the <a href="https://www.ds.informatik.uni-kiel.de/en/teaching/internet-of-things-wireless-networks">Internet of Things and Wireless Networks course</a> at <a href="https://www.uni-kiel.de/en/">Kiel University</a>.
+            Each year at the end of the course the participants vote for the best project in the <a href="https://www.ds.informatik.uni-kiel.de/en/teaching/internet-of-things-wireless-networks/iot-wireless-best-project-awards">Best Project Awards</a>.
+            In summer term 2021 the Smart Pot won the vote for the best project by popular vote among 14 projects.
           </p>
         </div>
       </div>
