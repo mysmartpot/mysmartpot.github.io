@@ -5,7 +5,7 @@
   --light-text-color: #E8E8E9;
   --light-background-color: #E8E8E9;
   --page-background-color: #FFFFFF;
-  --headline-color: #8B8B8B;
+  --headline-color: #5b5b5b;
   --header-height: 300px;
   --max-page-width: 1200px;
   --max-video-width: 900px;
@@ -150,7 +150,7 @@ header nav .links a {
 }
 
 header nav .links a:not(:hover) {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 header nav .icon {
@@ -370,7 +370,7 @@ footer a {
 }
 
 footer a:not(:hover) {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 footer nav a .icon {
