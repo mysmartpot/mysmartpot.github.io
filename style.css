@@ -44,12 +44,12 @@ h2 a:link:not(:hover) {
 
 header,
 footer,
-.content-container {
+section {
   position: relative;
 }
 
 footer:before,
-.content-container:before {
+section:before {
   content: "";
   display: block;
   position: absolute;
@@ -262,7 +262,7 @@ header nav .icon {
  * Content                                                                    *
  ******************************************************************************/
 
-.content-container {
+section {
   display: flex;
   justify-content: center;
   padding-top: 50px;
@@ -272,12 +272,12 @@ header nav .icon {
   filter: drop-shadow(0 8px 8px var(--dark-accent-color));
 }
 
-.content-container:nth-child(odd) {
+section:nth-child(odd) {
   background-color: var(--light-background-color);
   --slant-color: var(--light-background-color);
 }
 
-.content-container:nth-child(even) {
+section:nth-child(even) {
   background-color: var(--page-background-color);
   --slant-color: var(--page-background-color);
 }
